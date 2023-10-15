@@ -29,34 +29,8 @@ jobs:
     - run: npm test
     - name: Codecov
       uses: codecov/codecov-action@v4.0.0-beta.3
-      
-    - name: Update SHA
-      run: echo $GITHUB_SHA > ${{github.workspace}}/site/_meta
-
-    - name: Build container image
-      run: docker build -t registry.digitalocean.com/github-intergration:$(echo $GITHUB_SHA | head -c7) .
-
-    - name: Install doctl
-      uses: digitalocean/action-doctl@v2
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.9.3
       with:
-        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
-    - name: Log in to DigitalOcean Container Registry with short-lived credentials
-      run: doctl registry login --expiry-seconds 600
-
-    - name: Push image to DigitalOcean Container Registry
-      run: docker push registry.digitalocean.com/github-intergration:$(echo $GITHUB_SHA | head -c7)
-
-    - name: Update deployment file
-      run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|<IMAGE>registry.digitalocean.com/github-intergration:'${TAG}'|' ${{github.workspace}}/config/deployment.yml
-
-    - name: Save DigitalOcean kubeconfig with short-lived credentials
-      run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 actions-example-k8s-1-18
-
-    - name: Deploy to DigitalOcean Kubernetes
-      run: kubectl apply -f ${{github.workspace}}/config/deployment.yml
-
-    - name: Verify deployment
-      run: kubectl rollout status deployment/github-intergration
-  
-      
+        publish_dir: ./public
+            
