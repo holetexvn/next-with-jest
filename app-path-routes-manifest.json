@@ -1,0 +1,6 @@
+{
+  "/_not-found": "/_not-found",
+  "/client/page": "/client",
+  "/rsc/page": "/rsc",
+  "/blog/[slug]/page": "/blog/[slug]"
+}
