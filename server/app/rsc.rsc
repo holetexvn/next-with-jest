@@ -1,4 +1,4 @@
-0:["GwpZriwhW3Q7_m8bEv7jI",[[["",{"children":["rsc",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L1",[[],"$L2"]]]]
+0:["K1cjDwcrO9_k3-QO26KFB",[[["",{"children":["rsc",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L1",[[],"$L2"]]]]
 3:I{"id":1443,"chunks":["272:static/chunks/webpack-b1f8672bef6ff4fd.js","971:static/chunks/fd9d1056-bdbc21787612b876.js","864:static/chunks/864-1802646cc7a21fff.js"],"name":"","async":false}
 4:I{"id":8639,"chunks":["272:static/chunks/webpack-b1f8672bef6ff4fd.js","971:static/chunks/fd9d1056-bdbc21787612b876.js","864:static/chunks/864-1802646cc7a21fff.js"],"name":"","async":false}
 2:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"App Router"}],["$","meta","2",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
